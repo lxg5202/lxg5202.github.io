@@ -1,0 +1,755 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+#top{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    min-width: 1240px;
+    position: relative;
+    
+}
+#top-1{
+    width: 1200px;
+    height: 46px;
+    display: flex;
+    line-height: 46px;
+    margin-top: 25px;
+    z-index: 50;
+    position: fixed;
+}
+#logo{
+    margin: 0 auto;
+    padding-right: 400px;
+    
+    
+}
+#ul li{
+    list-style: none;
+    display: inline;
+    margin-left: 15px;
+}
+#ul>li>a{
+    color: white;
+}
+#ul>li>a:hover{
+    color: #3d3331;
+}
+#boximg{
+    position: absolute;
+    width: 100%;
+    height: 735px;
+    
+}
+
+.item{
+    opacity: 1;
+    transition: all 0.5;
+}
+.header>img:nth-child(1){
+    width: 100%;
+    background-size: 100%;
+    position: absolute;
+}
+.header>img:nth-child(2){
+    width: 100%;
+    background-size: 100%;
+    position: absolute;
+}
+.z{
+    z-index: 1;
+}    
+button{
+    width: 46px;
+    height: 40px;
+    position: absolute;
+    opacity: 0.5;
+    border: 4px solid #898989;
+    z-index: 20;
+    box-sizing: border-box;
+    bottom: 0px;
+    cursor: pointer;
+    
+}
+button:hover{
+    border: 4px solid white;
+    transition: all 1s;
+}
+.right{
+     right: 10%;
+     bottom: 250px;
+}
+.left{
+    right: 15%;
+    bottom: 250px;
+}
+#right{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    height: 100%;
+}
+#rightk{
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 45px;
+    height: 100%;
+    border-right: 6px solid #ddd;
+}
+#rightbox{
+    position: absolute;
+    top: 45%;
+    left: 0px;
+    width: 38px;
+    margin-top: -54px;
+}
+
+#box1{
+    width: 54px;
+    height: 54px;
+    background-color: #333333;
+    border-bottom: 1px solid black;
+}
+/* #rightbox>div>img{
+    width:54px;
+    height: 54px;
+    position: fixed;
+} */
+#rightbox>div{
+    position: relative;
+    overflow: hidden;
+    transition: all .8s;
+}
+#rightbox>div>p{
+    opacity: 0;
+}
+#rightbox>div>p{
+    position: absolute;
+    margin-top: -75px;
+    margin-left: 50px;
+    color: #333333;
+}
+#rightbox>div:hover{
+    background-color: red;
+}
+#box1:hover{
+    width: 124px;
+    height: 54px;
+    margin-left: -70px;
+    line-height: 54px;
+    border-bottom: none;
+    
+}
+#box1:hover>p{
+    color: white;
+    opacity: 1;
+}
+#box2{
+    width: 54px;
+    height: 54px;
+    background-color: #333333;
+    border-bottom: 1px solid black;
+}
+#box2:hover{
+    width: 124px;
+    height: 54px;
+    margin-left: -70px;
+    line-height: 54px;
+    border-bottom: none;
+    
+}
+#box2:hover>p{
+    color: white;
+    opacity: 1;
+}
+#box3{
+    width: 54px;
+    height: 54px;
+    background-color: #333333;
+    border-bottom: 1px solid black;
+}
+#box3:hover{
+    width: 124px;
+    height: 54px;
+    margin-left: -70px;
+    line-height: 54px;
+    border-bottom: none;
+}
+#box3:hover>p{
+    color: white;
+    opacity: 1;
+}
+#box4{
+    width: 54px;
+    height: 54px;
+    background-color: #333333;
+}
+.banner1{
+    width: 100%;
+    height: 170px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 36%;
+    margin-bottom: 40px;
+}
+h2{
+    width: 1140px;
+    height: 60px;
+    border-bottom: 1px solid #dad8d7;
+    text-align: center;
+    font-weight: normal;
+    font-size: 26px;
+}
+em{
+    margin-right: 15px;
+    font-weight: bold;
+}
+.bnt{
+    position: absolute;
+    left: 50%;
+    margin-left: -560px;
+    margin-top: -35px;
+}
+.ts{
+    width: 1140px;
+    height: 160px;
+    display: flex;
+    margin-top: 20px;
+    
+}
+.ts>div{
+    width: 25%;
+}
+h1{
+    font-weight: normal;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    padding: 20px  0 10px 0 ;
+    left: -30px;
+}
+h1>img{
+    position: absolute;
+    left: 30px;
+    top: 15px;
+    
+}
+small{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 10px;
+    color: #525252;
+    margin-right: 20px;
+}
+.ts1>p{
+    color: #525252;
+}
+.banner2{
+    width: 100%;
+    height: 455px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    background-color: #3d3331;
+    
+}
+.bnt1{
+    position: absolute;
+    left: 50%;
+    margin-left: -560px;
+    margin-top: 60px;
+    
+}
+.bnt1>h2{
+    color: white;
+}
+.xl{
+    width: 1140px;
+    height: 235px;
+    display: flex;
+    margin-top: 40px;
+    position: relative;
+}
+.xl>div{
+    width: 25%;
+}
+.xl>div>img:nth-child(1){
+    width: 250px;
+    height: 200px;
+}
+h3{
+    display:inline-block ;
+    width: 280px;
+    height: 35px;
+    text-align: center;
+    color: white;
+    font-weight: 600;   
+}
+.lj{
+    position: absolute;
+    width: 255px;
+    height: 225px;
+    opacity: 0;
+    transition: all 1.2s;
+}
+.lj:hover{
+    opacity: 1;
+    
+}
+.lj1{
+    margin-left: 285px;
+}
+.lj2{
+    margin-left: 570px;
+}
+.lj3{
+    margin-left: 855px;
+}
+.banner3{
+    width: 100%;
+    height: 365px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    background-image: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/bg-2.gif);
+    
+}
+.bnt2{
+    position: absolute;
+    left: 50%;
+    margin-left: -560px;
+    margin-top: 60px;
+}
+.cz{
+    width: 1140px;
+    height: 136px;
+    display: flex;
+    margin-top: 40px;
+    position: relative;
+}
+.cz>div{
+    width: 16.66666%;
+}
+.yuan>span{
+    display: inline-block;
+    width: 136px;
+    height: 136px;
+    padding-top: 36px;
+    border: 2px solid #69afde;
+    border-right-color: #1ad280;
+    border-bottom-color: #1ad280;
+    transition: all .8s ease-in-out;
+    color: #777;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    box-sizing: border-box;
+    
+}
+
+.yuan1>span:hover{
+    background-image: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/o1.png);
+    padding-top: 20px;
+    transform: rotate(360deg);
+}
+.yuan2>span:hover{
+    background-image: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/o2.png);
+    padding-top: 20px;
+    transform: rotate(360deg);
+}
+.yuan3>span:hover{
+    background-image: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/o3.png);
+    padding-top: 20px;
+    transform: rotate(360deg);
+}
+.yuan4>span:hover{
+    background-image: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/o4.png);
+    padding-top: 20px;
+    transform: rotate(360deg);
+}
+.yuan5>span:hover{
+    background-image: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/o5.png);
+    padding-top: 20px;
+    transform: rotate(360deg);
+}
+.yuan6>span:hover{
+    background-image: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/o6.png);
+    padding-top: 20px;
+    transform: rotate(360deg);
+}
+.banner4{
+    width: 100%;
+    height: 705px;
+    display: flex;
+    margin: 0 auto;
+    background: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/bg-6.jpg) top center;
+    
+}
+.bnt3{
+    position: absolute;
+    left: 50%;
+    margin-left: -560px;
+    margin-top: 50px;
+    height: 560px;
+    overflow: hidden;
+}
+.bnt3>h2{
+    color: white;
+}
+.lbb{
+    width: 1140px;
+    height: 495px;
+    position: relative;
+}
+.lbd{
+    
+    margin-top: 40px;
+    /* left: -1140px; */
+}
+.lb1{
+    margin-top: 40px;
+}
+
+.lb1>img{
+    margin-left: 58px;
+}
+.lb1>h2{
+    border:none;
+    color: white;
+    margin-top: 30px;
+    
+}
+.lb1>p{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+.lb{
+    width: 4560px;
+    display: flex;
+    position: absolute;
+    
+}
+.tran{
+    transition: all 1s;
+}
+.btn1{
+    position: relative;
+    height: 50px;
+    top: 450px;
+    text-align: center;
+}
+.btn1>.left1{
+    position: absolute;
+    margin-left: -85px;
+}
+.btn1>.right1{
+    position: absolute;
+    margin-left: 45px;
+}
+.banner5{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+}
+.btn4{
+    position: absolute;
+    left: 50%;
+    margin-left: -560px;
+    margin-top: 60px;
+    height: 678px;
+}
+.al{
+    display: flex;
+    width: 1140px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.al>div{
+    width: 255px;
+    padding: 0 15px;
+}
+.al>div>img{
+    width: 255px;
+    height: 182px;
+}
+.al>div>span{
+    display: block;
+    width: 255px;
+    height: 21px;
+    text-align: center;
+    padding: 20px 0px;
+    font-weight: 501;
+    transition: all 1s;
+    cursor: pointer;
+}
+.al>div>span:hover{
+    color: #3498db;
+}
+.btn4>span{
+    display: inline-block;
+    text-align: center;
+    width: 180px;
+    height: 50px;
+    margin-left: 42%;
+    border: 2px solid black;
+    line-height: 50px;
+    cursor: pointer;
+    transition: all 1s;
+}
+.btn4>span:hover{
+    color: white;
+    background-color: black;
+}
+.banner6{
+    width: 100%;
+    height: 280px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    background-color: #302b28;
+    background-image: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/about-bg.png);
+    background-repeat: no-repeat;
+    background-position: center 12px;
+}
+.btn5{
+    position: absolute;
+    left: 50%;
+    margin-left: -560px;
+    margin-top: 60px;
+    height: 170px;
+}
+.btn5>h2{
+    color: white;
+}
+.btn5>div{
+    width: 1140px;
+    height: 60px;
+    margin-top: 40px;
+}
+.btn5>div>p{
+    color: #9e9c9b;
+    line-height: 30px;
+}
+.banner7{
+    width: 100%;
+    height: 750px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+}
+.btn6{
+    position: absolute;
+    left: 50%;
+    margin-left: -560px;
+    margin-top: 60px;
+    height: 170px;
+}
+.zx{
+    width: 1170px;
+    height: 548px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.zx>div{
+    border-bottom: 1px solid #cdcdcd;
+    margin-top: 40px;
+}
+
+.zx>div:nth-child(1){
+    display: flex;
+    width: 555px;
+    height: 204px;
+    position: relative;
+    flex-wrap: nowrap;
+    margin-right: 20px;
+    
+}
+.zx>div:nth-child(2){
+    display: flex;
+    width: 585px;
+    height: 204px;
+    position: relative;
+    flex-wrap: wrap;
+    
+}
+.zx>div:nth-child(3){
+    display: flex;
+    width: 555px;
+    height: 204px;
+    position: relative;
+    flex-wrap: nowrap;
+    margin-right: 20px;
+    
+}
+.zx>div:nth-child(4){
+    display: flex;
+    width: 585px;
+    height: 204px;
+    position: relative;
+    
+    
+}
+.zx>div>img{
+    width: 200px;
+    height: 128px;
+    
+    
+}
+.p{
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 63px;
+    margin-left: 220px;
+    font-size: 15px;
+}
+.p1{
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 5px;
+    padding-top: 70px;
+    margin-left: 220px;
+    color: #525252;
+    font-size: 14px;
+    line-height: 20px;
+}
+.btn6>span{
+    display: inline-block;
+    text-align: center;
+    width: 180px;
+    height: 50px;
+    margin-left: 40%;
+    border: 2px solid black;
+    line-height: 50px;
+    cursor: pointer;
+    transition: all 1s;
+}
+.btn6>span:hover{
+    color: white;
+    background-color: black;
+}
+.footer{
+    width: 100%;
+    height: 410px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    background-image: url(http://www.nalijiaju.com.cn/skin/nalijiaju/style/images/bg-8.png);
+}
+.foot{
+    position: absolute;
+    left: 50%;
+    margin-left: -560px;
+    padding: 20px 0;
+    height: 410px;
+    width: 1170px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+.yh{
+    width: 342px;
+    height: 300px;
+}
+#jj{
+    width: 501px;
+    height: 245px;
+}
+#er{
+    width: 296px;
+    height: 168px;
+    margin-top: 30px;
+    
+}
+#er>span{
+    display: inline-block;
+    width: 118px;
+    height: 168px;
+}
+#er>span>img{
+    width: 118px;
+    height: 118px;
+}
+#er>span:nth-child(1){
+    margin-left: 40px;
+    
+    
+}
+#er>span:nth-child(2){
+    margin-left: 10px;
+    
+}
+#er>span>p{
+    text-align: center;
+    margin-top: 10px;
+}
+h4{
+    padding: 10px 5px 0 0;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+#fb{
+    width: 1140px;
+    height: 60px;
+}
+input{
+    height: 40px;
+    width: 263px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.yh>span{
+    display: block;
+    height: 40px;
+    width: 273px;
+    background-color: #302b28;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 10px;
+    transition: all .8s;
+}
+.yh>span:hover{
+    background-color: #4593fa;
+    color: white;
+}
+#jj>p{
+    font-size: 12px;
+    color: #919399;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+#jj>p:nth-child(3){
+    font-weight: 1000;
+}
+#fb{
+    font-size: 12px;
+    color: #919399;
+    position: relative;
+    border-top: 1px solid #525252;
+}
+#fb>p{
+    position: absolute;
+    bottom: 0;
+}
+#fb>p>a{
+    list-style: none;
+    color: #919399;
+}
+#fb>p>a:hover{
+    color: white;
+}
