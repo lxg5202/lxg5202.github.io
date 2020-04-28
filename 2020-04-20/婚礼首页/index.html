@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/layui.css" media="all">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html{
+            font-size: 13.333334vw;
+        }
+        body{
+            background: rgb(243, 243, 243);
+        }
+        .top{
+            width: 7.5rem;
+            height: .85rem;
+            background-color: yellow;
+        }
+        .add{
+            display: block;
+            color: tomato;
+            font-size: .4rem;
+            line-height: .85rem;
+            margin-left: .1rem;
+        }
+        input{
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            background-color: rgb(243, 243, 243);
+            border: none;
+        }
+        input::-webkit-input-placeholder{
+            font-size: 0.25rem;
+            text-align: center;
+        }
+        input:-moz-placeholder{
+            font-size: 0.25rem;
+            text-align: center;
+        }
+        input::-moz-placeholder{
+            font-size: 0.25rem;
+            text-align: center;
+        }
+        input::-ms-input-placeholder{
+            font-size: 0.25rem;
+            text-align: center;
+        }
+        .tu{
+           background-image: url(images/search.png);
+           background-size: 7%;
+           background-position-y: 0.08rem;
+           background-position-x: 0.1rem;
+           background-repeat: no-repeat;
+           line-height: 0.1rem;
+        }
+        .lb{
+            width: 7.5rem;
+            height: 3.4rem;
+            background-color: saddlebrown;
+        }
+        .lb>div{
+            width: 7.5rem;
+        }
+        .lb>div>div{
+            width: 7.5rem;
+        }
+        .lb>div>div>div>img{
+            width: 7.5rem;
+            height: 3.4rem;
+        }
+        .s{
+            width: 7.5rem;
+            height: 1.85rem;
+            display: flex;
+            background-color: white;
+        }
+        .s>div{
+            width: 1.875rem;
+            cursor: pointer;
+        }
+        
+        .s1>img{
+            width: 1rem;
+            height: 1rem;
+            margin-top: 0.3375rem;
+            margin-left: 0.4375rem;
+            
+        }
+        p{
+            margin-top: 0.1rem;
+            text-align: center;
+        }
+        .cai{
+            
+            width: 7.5rem;
+            height: 2.85rem;
+            position: relative;
+            margin-top: 0.2rem;
+        }
+        .cai>img:nth-child(1){
+            width: 3.75rem;
+            height: 2.85rem;
+            margin-right: 0.05rem;
+        }
+        .cai>img:nth-child(2){
+            width: 3.75rem;
+            height: 1.40rem;
+            position: absolute;
+            background-color: white;
+        }
+        .cai>img:nth-child(3){
+            width: 3.75rem;
+            height: 1.45rem;
+            position: absolute;
+            margin-top: 1.4rem;
+            background-color: white;
+
+        }
+        .tao{
+            width: 7.5rem;
+            height: 2.4rem;
+            background: url(images/taocan.png) no-repeat ;
+            margin-top: 0.1rem;
+            background-position-x: 0.1rem;
+            transition: all 1s;
+        }
+        .tao:hover{
+            opacity: 0.7;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+            <span class="add">郑州<i class="layui-icon" style="font-size: .4rem">&#xe625;</i> <input class="tu" type="text"  placeholder="搜索商家,套餐，话题">&emsp;<i class="layui-icon" style="font-size: .4rem">&#xe606;&emsp;</i><i class="layui-icon" style="font-size: .4rem">&#xe698;</i></span>
+    </div>
+    <div class="lb">
+      <div class="layui-carousel" id="test1">
+        <div carousel-item>
+          <div><img src="images/头部.png" alt=""></div>
+          <div><img src="images/top.png" alt=""></div>
+          <div><img src="images/top1.png" alt=""></div>
+          <div><img src="images/top2.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="s">
+        <div class="s1">
+            <img src="images/s1.png" alt=""><br>
+            <p>找商家</p>
+        </div>
+        <div class="s1">
+            <img src="images/s2.png" alt=""><br>
+            <p>找商家</p>
+        </div>
+        <div class="s1">
+            <img src="images/s3.png" alt=""><br>
+            <p>找商家</p>
+        </div>
+        <div class="s1">
+            <img src="images/s4.png" alt=""><br>
+            <p>找商家</p>
+        </div>
+    </div>
+    <div class="cai">
+        <img src="images/cai.png" alt="">
+        <img src="images/ce.png" alt="">
+        <img src="images/1.png" alt="">
+    </div>
+    <div class="tao">
+
+    </div>
+</body>
+<script src="layui.js"></script>
+<script>
+    layui.use('carousel', function(){
+  var carousel = layui.carousel;
+  //建造实例
+  carousel.render({
+    elem: '#test1'
+    ,width: '100%' //设置容器宽度
+    ,height:'100%'
+    ,arrow: 'none'
+  });
+});
+    </script>
+</html>
