@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="iscroll.Veb.js"></script>
+    <script src="zepto.js"></script>
+    <style>
+        html{
+            font-size: 13.33vw;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            width: 7.5rem;
+            background: #00c431;
+            height: 0.5rem;
+            position: absolute;
+            left:0;
+            width:100%;
+            line-height: 0.5rem;
+            text-align: center;
+            color:white;
+            font-size:0.32rem;
+            top: 0;
+        }
+        #type{
+           display: block;
+           width: 7.5rem;
+           height: 0.5rem;
+           position: relative;
+           top: 0.5rem;
+           font-size: 0;
+           text-align: center;
+
+        }
+        button{
+            width: 1.4rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            margin-left:0.05rem ;
+            
+        }
+        main{
+            position: absolute;
+            width: 7.5rem;
+            top: 1rem;
+            bottom: 0.5rem;
+            background: #d5d5d7;
+        }
+        .tip{
+            line-height: 0.4rem;
+            font-size: 0.14rem;
+            text-align: center;
+        }
+        #list{
+            background: white;
+            display: flex;
+            flex-wrap: wrap;
+            width: 7.5rem;
+        }
+        #list img{
+            height: 1.4rem;
+            width: 1.4rem;
+            display: block;
+            border-radius: 50%;    
+        }
+        a{
+            list-style: none;
+            text-decoration: none;
+            color: white;
+            padding: 0.025rem;
+        }
+        #list li{
+            width: 1.45rem;
+            box-sizing: border-box;
+        }
+        #list h4{
+            font-size: 0.14rem;
+            text-align: center;
+            color: coral;  
+        }
+        #loading{
+            background: url(http://vebcoder.cn/img/loading.4bbc20d4.jpg) center center no-repeat;
+            background-color: #eeeeee;
+            opacity: 0.6;
+            background-size: 2rem auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            display: none;
+        }
+        #list h4:hover{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        音乐馆
+    </header>
+    
+    <div id="type">
+        <button types="0">全部</button>
+        <button types="1">华语男</button>
+        <button types="2">华语女</button>
+        <button types="4">日韩男</button>
+        <button types="5">日韩女</button>
+    </div>
+    <main id="content_view">
+        <div class="content">
+            
+        <div class="tip">下拉刷新</div>
+        <ul id="list">
+           
+        </ul>
+        
+    </div>
+    <div id="loading"></div>
+</main>
+</body>
+<script>
+   
+    var isc_content=new iScroll("content_view",{
+        topOffset:40,
+        y:40,
+        onScrollMove:function(){
+
+            if(this.y>30){
+                this.minScrollY=0;
+                $(".tip").html("松开立即刷新")
+            }else{
+                this.minScrollY=-40;
+                $(".tip").html("下拉刷新")
+            }
+
+        },
+        onScrollEnd:function(){
+
+            if(this.minScrollY==0){
+
+                $(".tip").html("正在刷新中...")
+                getData()
+            }
+            if(this.y==this.maxScrollY){
+                console.log("到底了")
+                nextData()
+            }
+}
+})
+    var type=0;
+    getData()
+    $("#type button").live("click",function(){
+        type=$(this).attr("types");
+        // console.log(type)
+        getData()
+        
+    })
+    
+    function getData(){
+        $("#loading").show();
+        $.get("http://vebcoder.cn:9090/artist/artistInfo",{
+            category:type,
+             rn:100,
+             pn:1
+        },function(res){
+            var list=res.data.artistList;
+            console.log(list)
+            var html=""
+            for(var i=0 ;i<list.length;i++){
+                html+='<a href="songs.html?artistid='+list[i].id+'"><li><img src="'+list[i].pic+'" alt=""><h4>'+list[i].name+'</h4></li></a>'
+            }
+            console.log(html)
+            $("#list").html(html);
+            $("#loading").hide();
+            isc_content.refresh();
+        })
+    }
+    function nextData(){
+        type++;
+        $.get("http://vebcoder.cn:9090/artist/artistInfo",{
+            category:type,
+             rn:100,
+             pn:1
+        },function(res){
+            var list=res.data.artistList;
+            console.log(list)
+            var html=""
+            for(var i=0 ;i<list.length;i++){
+                html+='<a href="songs.html?artistid='+list[i].id+'"><li><img src="'+list[i].pic+'" alt=""><h4>'+list[i].name+'</h4></li></a>'
+            }
+            console.log(html)
+            list.innerHTML+=html
+            isc_content.refresh();
+        })
+    }
+</script>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="query.js"></script>
+    <script src="zepto.js"></script>
+    <style>
+        html{
+            font-size: 13.33vw;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            width: 7.5rem;
+            background:linear-gradient(#1dcaca,#1386c9);
+            height: 0.5rem;
+            position: absolute;
+            left:0;
+            width:100%;
+            line-height: 0.5rem;
+            text-align: center;
+            color:white;
+            font-size:0.32rem;
+            top: 0;
+        }
+        header a{
+            position: relative;
+            left: -2.5rem;
+            font-size: 0.2rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+        }
+        main{
+            position: absolute;
+            top: 0.5rem;
+        }
+        #list{
+            width: 7.5rem;
+            background: white;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0;
+        }
+        #list li{
+            width: 7.5rem;
+            height: 1rem;
+            
+            border-bottom: 0.01rem solid ;
+        }
+        #list li:nth-child(odd){
+            background: #30b4ff;
+        }
+        #list li:nth-child(even){
+            background: #02a0fb;
+        }
+        #list span{
+            display: inline-block;
+            font-size: 0.5rem;
+            
+        }
+        #list li span:nth-child(1){
+            padding-left: 0.2rem;
+            padding-top: 0.2rem;
+        }
+        #list li span:nth-child(2){
+            width: 4rem;
+            height: 0.6rem;
+            padding-left: 0.2rem;
+           
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #list li button{
+            background-color: #409eff;
+            width: 0.5rem;
+            height: 0.5rem;
+            font-size: 0.2rem;
+            margin-left: 0.5rem;
+        }
+        audio{
+            position: fixed;
+            left: 0;
+            bottom: -0.8rem;
+            height: 0.8rem;
+            width: 7.5rem;
+            outline: 0;
+        }
+        video{
+            position: fixed;
+            left: 0;
+            width: 100%;
+            bottom: -0.8rem;
+            height: 0.8rem;
+            width: 7.5rem;
+            outline: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">返回</a>
+        播放列表 
+    </header>
+    <main>
+    <ul id="list">
+    </ul>
+    
+</main>
+<audio src="" controls></audio>
+<video src="" controls></video>
+</body>
+<script>
+    var query=getQuery()
+    $.get("http://vebcoder.cn:9090/artist/artistMusic",{
+        artistid:query.artistid,
+        rn:100,
+        pn:1
+    },function(res){
+        // console.log(res)
+        var html=""
+        var list=res.data.list;
+        var x=0
+        
+        for(var i=0;i<list.length;i++){
+            x++
+            if(list[i].hasmv==1){
+                html+="<li><span>"+x+"</span><span>"+list[i].name+"</span><button class='song' song-id='"+list[i].rid+"'>歌曲</button><button class='mv' song-id='"+list[i].rid+"'>mv</button></li>"
+            }else{
+                html+="<li><span>"+x+"</span><span>"+list[i].name+"</span><button class='song' song-id='"+list[i].rid+"'>歌曲</button>"
+            }
+            
+
+        }
+        $("#list").html(html)
+    })
+
+    $(".song").live("click",function(){
+        var rid=$(this).attr("song-id");
+        $.get("http://vebcoder.cn:9090/url?format=mp3&rid="+rid+"&response=url&type=convert_url3&br=128kmp3&from=web",function(res){
+            var res=JSON.parse(res)
+           
+            $("audio").attr("src",res.url).css("bottom",0);
+            
+            var audio=document.getElementsByClassName("audio")[0];
+            audio.paly()
+        })
+    })
+    $(".mv").live("click",function(){
+        var rid=$(this).attr("song-id");
+        $.get("http://vebcoder.cn:9090/url?rid="+rid+"&response=url&format=mp4%7Cmkv&type=convert_url",function(res){
+            $("video").attr("src",res).css("bottom",0);
+            var video=document.getElementsByClassName("video")[0];
+            video.paly()
+        })
+    })
+</script>
+</html>
